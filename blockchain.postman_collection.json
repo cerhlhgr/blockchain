@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "f0425bca-451a-4e60-983c-2790cea35862",
+		"name": "blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18086321"
+	},
+	"item": [
+		{
+			"name": "Работа с контрактом",
+			"item": [
+				{
+					"name": "Создать заказ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"addressTokenA\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n    \"addressTokenB\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n    \"amountA\": 5,\n    \"amountB\": 10\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/web3/createOrder",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"web3",
+								"createOrder"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Создать заказ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"addressTokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n    \"addressTokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n    \"amountA\": 5,\n    \"amountB\": 10\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/orders/createOrder",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"orders",
+										"createOrder"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "321"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"141-dxvTPjwaVewZsEiu59OJ6v2OVbU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 01:00:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"idOrders\": \"94350794847304583853407474427382483268740915801836543806322034643457954311971\",\n    \"amountA\": \"5\",\n    \"amountB\": \"10\",\n    \"tokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n    \"tokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n    \"user\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n    \"isMarket\": false,\n    \"id\": 1,\n    \"isActive\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "имполнить",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\":[\"2403354768543312018716763136049340028873581760903942998759211723620649357810\"],\n    \"addressTokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n    \"addressTokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n    \"amountA\": 5,\n    \"amountB\": 10,\n    \"isMarket\": true\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/web3/matchOrders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"web3",
+								"matchOrders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Создать заказ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"addressTokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n    \"addressTokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n    \"amountA\": 5,\n    \"amountB\": 10\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/orders/createOrder",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"orders",
+										"createOrder"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "321"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"141-dxvTPjwaVewZsEiu59OJ6v2OVbU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 01:00:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"idOrders\": \"94350794847304583853407474427382483268740915801836543806322034643457954311971\",\n    \"amountA\": \"5\",\n    \"amountB\": \"10\",\n    \"tokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n    \"tokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n    \"user\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n    \"isMarket\": false,\n    \"id\": 1,\n    \"isActive\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Отменить заказ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/web3/cancelOrder/12810517904016206834760944473660518521872103115419799774021458286145481212197",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"web3",
+								"cancelOrder",
+								"12810517904016206834760944473660518521872103115419799774021458286145481212197"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Отменить заказ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/web3/cancelOrder/12810517904016206834760944473660518521872103115419799774021458286145481212197",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"web3",
+										"cancelOrder",
+										"12810517904016206834760944473660518521872103115419799774021458286145481212197"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d-hmYP8k381BA0mbRQFX9VJlcsJLQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 18:04:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ordersId\": \"12810517904016206834760944473660518521872103115419799774021458286145481212197\",\n    \"isActive\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "работа с пользователем",
+			"item": [
+				{
+					"name": "Получить массив заявок",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/orders/getOrders?tokenA=0x22961F4EB722B9582E9743a662e6f1c051add4df&tokenB=0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295&user=0x22961F4EB722B9582E9743a662e6f1c051add4df&active=false",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"orders",
+								"getOrders"
+							],
+							"query": [
+								{
+									"key": "tokenA",
+									"value": "0x22961F4EB722B9582E9743a662e6f1c051add4df"
+								},
+								{
+									"key": "tokenB",
+									"value": "0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295"
+								},
+								{
+									"key": "user",
+									"value": "0x22961F4EB722B9582E9743a662e6f1c051add4df"
+								},
+								{
+									"key": "active",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Получить массив заявок",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/orders/getOrders?tokenA=0x22961F4EB722B9582E9743a662e6f1c051add4df&tokenB=0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295&user=0x22961F4EB722B9582E9743a662e6f1c051add4df&active=false",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"orders",
+										"getOrders"
+									],
+									"query": [
+										{
+											"key": "tokenA",
+											"value": "0x22961F4EB722B9582E9743a662e6f1c051add4df"
+										},
+										{
+											"key": "tokenB",
+											"value": "0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295"
+										},
+										{
+											"key": "user",
+											"value": "0x22961F4EB722B9582E9743a662e6f1c051add4df"
+										},
+										{
+											"key": "active",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "970"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3ca-hvjcxrCswidDLtcNI1vH7PIiqDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 18:31:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"ordersId\": \"15602363137796751580028182617190631658487515233860915302294389565138952380811\",\n        \"amountA\": \"5\",\n        \"amountB\": \"10\",\n        \"tokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"tokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n        \"user\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"isActive\": false,\n        \"isMarket\": false\n    },\n    {\n        \"id\": 2,\n        \"ordersId\": \"12810517904016206834760944473660518521872103115419799774021458286145481212197\",\n        \"amountA\": \"5\",\n        \"amountB\": \"10\",\n        \"tokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"tokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n        \"user\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"isActive\": false,\n        \"isMarket\": false\n    },\n    {\n        \"id\": 3,\n        \"ordersId\": \"33781680446922160678392231322186798388233986919595912054098715318797543527129\",\n        \"amountA\": \"5\",\n        \"amountB\": \"10\",\n        \"tokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"tokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n        \"user\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"isActive\": false,\n        \"isMarket\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Получить массив заявок Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/orders/getMatchingOrders?tokenA=0x22961F4EB722B9582E9743a662e6f1c051add4df&tokenB=0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295&amountA=10&amountB=5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"orders",
+								"getMatchingOrders"
+							],
+							"query": [
+								{
+									"key": "tokenA",
+									"value": "0x22961F4EB722B9582E9743a662e6f1c051add4df"
+								},
+								{
+									"key": "tokenB",
+									"value": "0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295"
+								},
+								{
+									"key": "amountA",
+									"value": "10"
+								},
+								{
+									"key": "amountB",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Получить массив заявок",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/orders/getOrders?tokenA=0x22961F4EB722B9582E9743a662e6f1c051add4df&tokenB=0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295&user=0x22961F4EB722B9582E9743a662e6f1c051add4df&active=false",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"orders",
+										"getOrders"
+									],
+									"query": [
+										{
+											"key": "tokenA",
+											"value": "0x22961F4EB722B9582E9743a662e6f1c051add4df"
+										},
+										{
+											"key": "tokenB",
+											"value": "0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295"
+										},
+										{
+											"key": "user",
+											"value": "0x22961F4EB722B9582E9743a662e6f1c051add4df"
+										},
+										{
+											"key": "active",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "970"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3ca-hvjcxrCswidDLtcNI1vH7PIiqDM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 18:31:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"ordersId\": \"15602363137796751580028182617190631658487515233860915302294389565138952380811\",\n        \"amountA\": \"5\",\n        \"amountB\": \"10\",\n        \"tokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"tokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n        \"user\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"isActive\": false,\n        \"isMarket\": false\n    },\n    {\n        \"id\": 2,\n        \"ordersId\": \"12810517904016206834760944473660518521872103115419799774021458286145481212197\",\n        \"amountA\": \"5\",\n        \"amountB\": \"10\",\n        \"tokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"tokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n        \"user\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"isActive\": false,\n        \"isMarket\": false\n    },\n    {\n        \"id\": 3,\n        \"ordersId\": \"33781680446922160678392231322186798388233986919595912054098715318797543527129\",\n        \"amountA\": \"5\",\n        \"amountB\": \"10\",\n        \"tokenA\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"tokenB\": \"0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295\",\n        \"user\": \"0x22961F4EB722B9582E9743a662e6f1c051add4df\",\n        \"isActive\": false,\n        \"isMarket\": false\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,52 @@
+version: '3.2'
+
+services:
+  db:
+    container_name: db
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      - MYSQL_USER=sergey
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=projectdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - my_network
+
+  api:
+    container_name: api_project
+    build:
+      context: ./project
+      dockerfile: Dockerfile
+    environment:
+      - DB_HOST=db
+      - DB_LOGIN=root
+       -DB_PASSWORD=password
+      - DB_NAME=projectdb
+      - INFURA_API_URL=wss://rinkeby.infura.io/ws/v3/<infura_key>
+      - CONTRACT=<contract_id>
+      - SIGNER_PRIVATE_KEY=<private_key>
+    volumes:
+      - .:/project
+      - /project/node_modules
+    ports:
+      - "5000:5000"
+    command: npm run start:dev
+    depends_on:
+      - db
+    restart: always
+    networks:
+      - my_network
+
+volumes:
+  db_data:
+networks:
+  my_network:
+
+
+
+
